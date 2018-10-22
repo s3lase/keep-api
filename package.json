@@ -1,0 +1,24 @@
+{
+  "name": "keep-api",
+  "version": "1.0.0",
+  "description": "This is the official backend for keep-api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebenKB/keep-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "express"
+  ],
+  "author": "fonbeat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebenKB/keep-api/issues"
+  },
+  "homepage": "https://github.com/ebenKB/keep-api#readme"
+}
