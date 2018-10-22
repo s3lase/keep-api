@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/ebenKB/keep-api/issues"
   },
-  "homepage": "https://github.com/ebenKB/keep-api#readme"
+  "homepage": "https://github.com/ebenKB/keep-api#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.5"
+  }
 }
