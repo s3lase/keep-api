@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
-const Schema = mongoose.Schema;
+let  Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   email:{
@@ -31,23 +31,35 @@ const userSchema = new Schema({
 });
 
 const hashPassword = (password) =>{
-  return new Promise((resolve)=>{
-    const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(password, salt);
-    resolve(hash)
-  })
+  const salt = bcrypt.genSaltSync(10);
+  return bcrypt.hashSync(password, salt);
 }
 
-userSchema.pre('save', function() {
-  return new Promise((reject) => {
-    hashPassword(this.password).then((hash)=>{
-      this.password = hash;
-    }).catch(err=>{
-      reject("Something went wrong"+err);
-    })
-  });
+userSchema.pre('save', function(next) {
+ const user = this;
+ if(!user.isModified('password')){
+   return next();
+ }
+  user.password  = hashPassword(user.password);
+  return next();
 });
-const User = mongoose.model('User',userSchema);
+
+let User = mongoose.model('User',userSchema);
+
+// const newUser = {
+//   email:"eakbo21@gmail.com",
+//   password:"eben123"
+// }
+
+// User.create(newUser,(err,created)=>{
+//   if(created){
+//     console.log("We have created a new user.")
+//   }
+// })
+
+
+
+
 
 export default User;
 

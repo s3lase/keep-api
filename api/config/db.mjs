@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
 
-const dbConnect  = ()=>{
+const dbConnect  = (config)=>{
  return new Promise((resolve,reject)=>{
-  mongoose.connect('mongodb://localhost:27017/keep').then(()=>{
+  mongoose.connect(config.db,{ useNewUrlParser: true }).then(()=>{
     resolve({'connection':"success"})
   }).catch(err=>{
-    reject("an error occured while connecting to the database")
+    reject("an error occured while connecting to the database"+err)
   })
- })
+ });
 }
 
 export default  dbConnect;

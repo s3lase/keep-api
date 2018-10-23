@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ebenKB/keep-api#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.16.4",
     "mongoose": "^5.3.5"
   }

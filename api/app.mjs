@@ -1,8 +1,13 @@
 import express from  'express';
+import config from './config/config'
 import db from  './config/db.mjs';
-import indexRoute  from './routes/index'
+import indexRoute  from './routes/index';
+import User from './model/user'
+
 //connect the server to the databse
-db();
+db(config).then(data=>{
+  console.log(data)
+});
 
 const app = express();
 
