@@ -23,10 +23,10 @@ class User {
   createUser(user){
     return new promise ((resolve,reject)=>{
       if(!user){
-        reject(`err: Sorry user is not defined`)
+        reject("err: Sorry user is not defined")
       }
 
-      UserModel.creareUser(user).then(data=>{
+      UserModel.create(user).then(data=>{
         resolve(data)
       }).catch(err=>{
         reject(`An error occured while creating the user ${err}`)
@@ -37,7 +37,7 @@ class User {
   updateUser(newUser){
     return new Promise((resolve,reject)=>{
       if(!newUser)
-        reject(`err: User is not defined`);
+        reject("err: User is not defined");
 
       UserModel.findByIdAndUpdate({_id:user._id},{new:true})
         .then(updated=>{
@@ -52,7 +52,7 @@ class User {
   deleteUser(userId){
     return new Promise((resolve,reject)=>{
       if(!userId)
-        reject(`err: Id is not defined`);
+        reject("err: Id is not defined");
       UserModel.findByIdAndRemove({_id:userId},{new:true})
         .then(deletedUser=>{
           resolve(deletedUser);
@@ -61,6 +61,11 @@ class User {
           reject(err);
         })
     });
+  }
+
+  //testing mocha
+  sayHello(){
+    return "hello"
   }
 }
 
