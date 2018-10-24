@@ -10,8 +10,12 @@ class User {
       if(!email || !password)
         reject(`Email or password is not defined`);
 
-      UserModel.findOne({email,password}).then(found=>{
+      UserModel.findOne({email,password})
+      .then(found=>{
         resolve(found)
+      })
+      .catch(err=>{
+        reject(err)
       })
     })
   }
