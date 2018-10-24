@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ebenKB/keep-api.git"
+    "url": "git+https://github.com/quajo/keep-api.git"
   },
   "keywords": [
     "nodejs",
@@ -19,9 +19,9 @@
   "author": "fonbeat",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ebenKB/keep-api/issues"
+    "url": "https://github.com/quajo/keep-api/issues"
   },
-  "homepage": "https://github.com/ebenKB/keep-api#readme",
+  "homepage": "https://github.com/quajo/keep-api#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^6.1.0",
