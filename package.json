@@ -4,6 +4,7 @@
   "description": "This is the official backend for keep-api",
   "main": "app.js",
   "scripts": {
+    "lint": "eslint . --ext '.mjs,.js'",
     "test": "mocha --recursive --compilers js:@babel/register ./test/user/*.mjs || true",
     "start": "node --experimental-modules app.mjs"
   },
@@ -36,6 +37,10 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-mocha": "^5.2.0",
     "mjs-mocha": "^2.1.2",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.4"
