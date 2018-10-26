@@ -15,7 +15,8 @@ db(config).then(data=>{
 });
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+bodyParser.json(true)
 app.use("/api",indexRoute);
 app.use("/api/auth",authRoute)
 

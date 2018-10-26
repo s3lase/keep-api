@@ -1,18 +1,17 @@
 module.exports = {
   parserOptions: {
     ecmaVersion: 2017,
-    sourceType: 'module'
+    sourceType: "module"
   },
-  plugins: [
-    'mocha'
-  ],
+  plugins: ["mocha", "prettier"],
   env: {
     node: true,
     mocha: true
   },
-  extends: 'airbnb-base',
   rules: {
-    'mocha/no-exclusive-tests': 'error',
-    'mocha/handle-done-callback': 'error'
+    extends: "airbnb-base",
+    "mocha/no-exclusive-tests": "error",
+    "mocha/handle-done-callback": "error"
+    // "prettier/prettier": "error"
   }
 };
