@@ -4,9 +4,9 @@
   "description": "This is the official backend for keep-api",
   "main": "app.js",
   "scripts": {
-    "lint": "eslint . --ext '.mjs,.js'",
-    "test": "mocha --recursive --compilers js:@babel/register ./test/user/*.mjs || true",
-    "start": "node --experimental-modules app.mjs"
+    "test": "mocha --recursive --compilers js:@babel/register ./test/*/*.mjs || true",
+    "start": "node --experimental-modules app.mjs",
+    "lint": "eslint . --ext '.mjs,.js'"
   },
   "repository": {
     "type": "git",
@@ -25,10 +25,11 @@
   "homepage": "https://github.com/quajo/keep-api#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.3.5"
+    "mongoose": "^5.3.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -41,7 +42,6 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-mocha": "^5.2.0",
-    "mjs-mocha": "^2.1.2",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.4"
   }
