@@ -1,8 +1,9 @@
-import express from "express";
+import express from 'express';
+
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send(`THIS IS THE API INDEX`);
+router.get('/', (req, res) => {
+  res.send('THIS IS THE API INDEX');
 });
 
 export default router;

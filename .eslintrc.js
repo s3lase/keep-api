@@ -3,15 +3,15 @@ module.exports = {
     ecmaVersion: 2017,
     sourceType: "module"
   },
-  plugins: ["mocha", "prettier"],
+  plugins: ["mocha"],
   env: {
     node: true,
     mocha: true
   },
+  extends: "airbnb-base",
   rules: {
-    extends: "airbnb-base",
     "mocha/no-exclusive-tests": "error",
-    "mocha/handle-done-callback": "error"
-    // "prettier/prettier": "error"
+    "mocha/handle-done-callback": "error",
+    "no-console":"off"
   }
 };
